@@ -97,7 +97,7 @@ class MaoYan(object):
                 'release_time': release_time,
                 'img_url': img_url
             }
-            download(img_url, str(ranking) + '_' + title)
+        #         download(img_url, str(ranking))
         return movie_info
 
 
