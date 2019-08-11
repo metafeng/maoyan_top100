@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+{% block main %}
+
+
+<h1 class="table_title">{{ table_title }}</h1>
+<form action="/search" method="get" style="height: 50px;">
+    {% csrf_token %}
+    <select name="s">
+        <option value="title">电影名</option>
+        <option value="stars">演员</option>
+        <option value="score_lt">评分(小于)</option>
+        <option value="score_gt">评分(大于)</option>
+        <option value="time_before">时间(之前)</option>
+        <option value="time_after">时间(之后)</option>
+    </select>
+    <input type="text" name="q" style="height: 30px;">
+    <input type="submit" value="Search">
+</form>
+{{ error }}
+<div id="tableBox">
+    {#绘制表格#}
+    <table id='customers'>
+        {# 表头内容 #}
+        <tr>
+            <th>排名</th>
+            <th>电影</th>
+            <th>评分</th>
+            <th>演员</th>
+            <th>上映时间</th>
+            <th>电影海报</th>
+        </tr>
+
+        {% block content %}
+        {# 表格内容 #}
+        {% if object_list %}
+        {% for movie in movies %}
+        {% if forloop.counter|divisibleby:2 %}
+        <tr class="alt">
+            {% else %}
+        <tr>
+            {% endif %}
+            <td>{{ movie.ranking }}</td>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.score }}</td>
+            <td>{{ movie.stars }}</td>
+            <td>{{ movie.release_time }}</td>
+            <td><img src="{{ movie.img_url }}" alt="poster" style="height: 120px; width: 90px;"></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endblock content %}
+    </table>
+</div>
+
+{% endblock main %}
+
+
+</body>
+</html>

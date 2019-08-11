@@ -2,6 +2,7 @@ beautifulsoup4==4.8.0
 certifi==2019.6.16
 chardet==3.0.4
 cycler==0.10.0
+Django==2.2.4
 efficient-apriori==1.0.0
 idna==2.8
 jieba==0.39
@@ -28,6 +29,7 @@ simplejson==3.16.0
 six==1.12.0
 snapshot-selenium==0.0.2
 soupsieve==1.9.2
+sqlparse==0.3.0
 urllib3==1.25.3
 wincertstore==0.2
 wordcloud==1.5.0

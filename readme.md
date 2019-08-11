@@ -92,6 +92,12 @@
 
 ![image](https://raw.githubusercontent.com/hufe09/GitNote-Images/master/Picee/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190807082840.8qeggx7ywgc.png)
 
+# Django 页面
+
+![image](https://raw.githubusercontent.com/hufe09/GitNote-Images/master/Picee/image.lqoou3qwb1e.png)
+
+![image](https://raw.githubusercontent.com/hufe09/GitNote-Images/master/Picee/image.9y5zw4iti5e.png)
+
 ## 一些想法
 
 本次爬虫这些功能都是自己想到什么就做什么，就是一个逐渐把想法变为代码的转换过程，比起条条框框的规则来说，更享受我行我素的感觉。但是，真真要想做出有质量的东西，一定要严格遵循其规则。

@@ -1,0 +1,62 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <title>猫眼Top100爬虫</title>
+
+    {% load static %}
+    <!-- css -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="shortcut icon" href="{% static "crawler/images/favicon.ico" %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'crawler/css/styles.css' %}">
+    <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts-en.common.min.js"></script>
+    <script src="{% static "crawler/js/script.js" %}"></script>
+</head>
+
+<body>
+<nav>
+    <!-- REPLACE IMG VALUE WITH LOGO -->
+    <div>
+        <a href="#">
+            <img class="logo"
+                 src="{% static "crawler/images/logo.png" %}"/></a>
+    </div>
+    {# <li class="nameTag">Hufe09</li> #}
+
+    <div class="fullmenu">
+        <img class="exit" src="https://raw.githubusercontent.com/hufe09/GitNote-Images/master/Picee/logo.7ete93wobu.png"/>
+        <ul>
+            <li><a href="{% url "crawler:index" %}"><strong>HOME</strong></a>
+
+                <div class="dropdown">
+                    <ul>
+                        <li><a href='#'>SUB HEADING 1</a></li>
+                        <li><a href='#'>SUB HEADING 2</a></li>
+                        <li><a href='#'>SUB HEADING 3</a></li>
+                    </ul>
+                </div>
+            </li>
+
+
+            {# <li><a href="{% url "crawler:show_movies" %}"><strong>MOVIES</strong></a></li> #}
+            <li><a href="{% url "crawler:search" %}"><strong>SEARCH</strong></a></li>
+        </ul>
+    </div> <!-- end of fullmenu for mobile -->
+    {#    <img class="menu-icon" src="http://citysmokehousesf.com/images/menu_icon.png"/>#}
+</nav>
+{% block main %}
+
+{% endblock main %}
+
+{% block paging %}
+{% endblock paging %}
+</body>
+
+</html>
