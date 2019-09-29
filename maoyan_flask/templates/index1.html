@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block title%} {{ title }} {% endblock title%} {% block movies_list %}
+<section class="latest-albums-area section-padding-100">
+
+    <div id="tableBox">
+
+        <table id='customers'>
+            <!-- {# 表头内容 #} -->
+            <tr>
+                <th>排名</th>
+                <th>电影</th>
+                <th>评分</th>
+                <th>演员</th>
+                <th>上映时间</th>
+                <th>电影海报</th>
+            </tr>
+
+            {# {% for movie in movies_list %}
+
+            <tr>
+                <td>{{ movie.ranking }}</td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.score }}</td>
+                <td>{{ movie.stars }}</td>
+                <td>{{ movie.release_time }}</td>
+                <td><img src="{{ movie.img_url }}" alt="poster" style="height: 120px; width: 90px;"></td>
+            </tr>
+            {% endfor %} #}
+            <h1猫眼电影 style="height: 500px;"></h1>
+</section>
+
+{% endblock movies_list %}

@@ -1,0 +1,306 @@
+{% extends 'base.html' %} {% block title%} {{ title }} {% endblock title%} {% block hero_area %}
+
+<!-- ##### Hero Area Start ##### -->
+<section class="hero-area">
+    <div class="hero-slides owl-carousel">
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(static/img/movie-img/bg-1.jpg);"></div>
+
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">Beyond Time</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">超越时光 <span>Beyond Time</span>
+                            </h2>
+                            <!-- <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(static/img/movie-img/bg-2.jpg );"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">The Majestic</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">电影人生<span>The Majestic</span></h2>
+                            <!-- <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Hero Area End ##### -->
+{% endblock hero_area %} {% block main %}
+<!-- ##### Latest Albums Area Start ##### -->
+<section class="latest-albums-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading style-2">
+                    <p></p>
+                    <h2>《美丽人生》影评<br>积极人生态度，人生便是美丽的</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
+                <div class="ablums-text text-center mb-70">
+                    <p>这是一部充满爱与温暖，但也充满残酷的影片，但是它的过程又很美。人们常常会在生命当中陷入大大小小的绝望，而面对绝望的态度又可以多种多样。你可以选择放弃挣扎，把所有结果都交给命运， 你也可以努力地为之拼搏、奋斗。而这部电影当中，充满了绝望，但是在绝望中又坚信希望、积极乐观，一直在传授着一个经验：只要有积极的人生态度，人生便是美丽的。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="albums-slideshow owl-carousel">
+                    <!-- Single Album -->
+                    {% for index in range(1, 7) %}
+                    <div class="single-album">
+                        <!-- <img src="{{ movies_list[index].img_url }}" alt="{{ movies_list[index].title }}"> -->
+                        <img src="static/img/bg-img/a{{ index }}.jpg" alt="{{ movies_list[index].title }}">
+                        <div class="album-info">
+                            <a href="#">
+                                <h5>{{ movies_list[index].title }}</h5>
+                            </a>
+                            <p>{{ movies_list[index].score }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Latest Albums Area End ##### -->
+
+<!-- ##### Buy Now Area Start ##### -->
+<section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading style-2">
+                    <p></p>
+                    <h2>猫眼电影TOP100</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="movies_list_area">
+            <!-- Single Album Area -->
+            {% for movie in movies_list %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <div class="single-album-area wow fadeInUp" data-wow-delay="100ms"></div>
+                <div class="album-thumb">
+                    <img class="movie_poster" src="{{ movie.img_url }}" alt="{{ movie.title }} poster">
+                    <!-- Album Price -->
+                    <div class="album-price">
+                        <p> <strong>Top {{ movie.ranking }} </strong> </p>
+                    </div>
+                </div>
+                <div class="album-info">
+                    <a href="#">
+                        <h5>{{ movie.title }} | {{ movie.score }}</h5>
+                    </a>
+                    <p>{{ movie.stars }}</p>
+
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
+                    <a href="#" class="btn oneMusic-btn load-more-movies">Load More <i
+                            class="fa fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Buy Now Area End ##### -->
+
+<!-- ##### Featured Artist Area Start ##### -->
+<section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(static/img/bg-img/bg-4.jpg);">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-12 col-md-5 col-lg-4">
+                <div class="featured-artist-thumb">
+                    <img src="static/img/bg-img/fa.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-md-7 col-lg-8">
+                <div class="featured-artist-content">
+                    <!-- Section Heading -->
+                    <div class="section-heading white text-left mb-30">
+                        <p></p>
+                        <h2>Buy What’s New</h2>
+                    </div>
+                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum
+                        at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros.
+                    </p>
+                    <div class="song-play-area">
+                        <div class="song-name">
+                            <p>01. Main Hit Song</p>
+                        </div>
+                        <audio preload="auto" controls>
+                            <source src="static/audio/dummy-audio.mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Featured Artist Area End ##### -->
+
+<!-- ##### Miscellaneous Area Start ##### -->
+<section class="miscellaneous-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <!-- ***** Weeks Top ***** -->
+            <div class="col-12 col-lg-4">
+                <div class="weeks-top-area mb-100">
+                    <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
+                        <p>TIME</p>
+                        <h2>近期电影</h2>
+                    </div>
+
+
+                    <!-- Single Top Item -->
+                    {% for index in range(1, order_by_time[:7]|length) %}
+
+                    <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms">
+                        <div class="thumbnail">
+                            <img src="static/img/bg-img/wt{{ index }}.jpg" alt="">
+                        </div>
+                        <div class="content-">
+                            <h6>{{ order_by_time[index].title}}</h6>
+                            <p>{{ order_by_time[index].release_time}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <!-- ***** New Hits Songs ***** -->
+            <div class="col-12 col-lg-4">
+                <div class="new-hits-area mb-100">
+                    <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
+                        <p>SCORE</p>
+                        <h2>评分TOP</h2>
+                    </div>
+
+                    <!-- Single Top Item -->
+                    {% for index in range(1, order_by_score[:7]|length) %}
+                    <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
+                        <div class="first-part d-flex align-items-center">
+                            <div class="thumbnail">
+                                <img src="static/img/bg-img/wt{{ index }}.jpg" alt="">
+                            </div>
+                            <div class="content-">
+                                <h6>{{ order_by_score[index].title }}</h6>
+                                <p>{{ order_by_score[index].score }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <!-- ***** Popular Artists ***** -->
+            <div class="col-12 col-lg-4">
+                <div class="popular-artists-area mb-100">
+                    <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
+                        <p>TOP</p>
+                        <h2>人气最棒</h2>
+                    </div>
+
+                    <!-- Single Artist -->
+                    {% for index in range(1, movies_list[:8]|length) %}
+                    <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
+                        <div class="thumbnail">
+                            <img src="static/img/bg-img/pa{{ index }}.jpg" alt="">
+                        </div>
+                        <div class="content-">
+                            <p>{{ movies_list[index].title }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Miscellaneous Area End ##### -->
+
+<!-- ##### Contact Area Start ##### -->
+<!-- <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(static/img/bg-img/bg-2.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
+                    <p>See what’s new</p>
+                    <h2>Get In Touch</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Contact Form Area -->
+<!-- <div class="contact-form-area">
+    <form action="#" method="post">
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="form-group wow fadeInUp" data-wow-delay="100ms">
+                    <input type="text" class="form-control" id="name" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="form-group wow fadeInUp" data-wow-delay="200ms">
+                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group wow fadeInUp" data-wow-delay="300ms">
+                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group wow fadeInUp" data-wow-delay="400ms">
+                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                </div>
+            </div>
+            <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
+                <button class="btn oneMusic-btn mt-30" type="submit">Send <i
+                                            class="fa fa-angle-double-right"></i></button>
+            </div>
+        </div>
+    </form> -->
+</div>
+</div>
+</div>
+</div>
+</section> -->
+<!-- ##### Contact Area End ##### -->
+{% endblock main %}
