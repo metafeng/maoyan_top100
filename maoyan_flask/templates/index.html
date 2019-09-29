@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title%} {{ title }} {% endblock title%} {% block hero_area %}
+{% extends 'base.html' %} {% block title%} {{ page_title }} {% endblock title %} {% block hero_area %}
 
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
@@ -137,12 +137,12 @@
 <!-- ##### Buy Now Area End ##### -->
 
 <!-- ##### Featured Artist Area Start ##### -->
-<section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(static/img/bg-img/bg-4.jpg);">
+<section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(static/img/movie-img/bg-3.jpg);">
     <div class="container">
         <div class="row align-items-end">
             <div class="col-12 col-md-5 col-lg-4">
                 <div class="featured-artist-thumb">
-                    <img src="static/img/bg-img/fa.jpg" alt="">
+                    <img src="{{ url_for('static', filename='img/movie-img/mv-1.jpg') }}" alt="">
                 </div>
             </div>
             <div class="col-12 col-md-7 col-lg-8">
@@ -150,17 +150,16 @@
                     <!-- Section Heading -->
                     <div class="section-heading white text-left mb-30">
                         <p></p>
-                        <h2>Buy What’s New</h2>
+                        <h2>周杰伦 - 说好不哭（with 五月天阿信）</h2>
                     </div>
-                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum
-                        at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros.
+                    <p>「说好不哭」是一首关于「成全」与「约定」的情歌，以钢琴缓缓诉说这段凄美绝伦的爱情故事，整首歌以钢琴为主故事线、弦乐编织出抒情场景，营造出一种爱情电影的氛围；歌词以男生的第一人称，娓娓道来这段爱情的心情转折与故事情节；几句简短的歌词，将男女之间因为太替对方着想而牺牲这段爱情的细腻心思表达得丝丝入扣、令人容易产生共鸣与带入感；每段爱情都有各自的委屈与无奈，即使走向分手，还是要「说好不哭」，微笑面对。
                     </p>
                     <div class="song-play-area">
                         <div class="song-name">
-                            <p>01. Main Hit Song</p>
+                            <p>周杰伦 - 说好不哭（with 五月天阿信）</p>
                         </div>
                         <audio preload="auto" controls>
-                            <source src="static/audio/dummy-audio.mp3">
+                            <source src="static/audio/wont-cry.mp3">
                         </audio>
                     </div>
                 </div>
@@ -253,54 +252,5 @@
 </section>
 <!-- ##### Miscellaneous Area End ##### -->
 
-<!-- ##### Contact Area Start ##### -->
-<!-- <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(static/img/bg-img/bg-2.jpg);">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
-                    <p>See what’s new</p>
-                    <h2>Get In Touch</h2>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-12">
-                <!-- Contact Form Area -->
-<!-- <div class="contact-form-area">
-    <form action="#" method="post">
-        <div class="row">
-            <div class="col-md-6 col-lg-4">
-                <div class="form-group wow fadeInUp" data-wow-delay="100ms">
-                    <input type="text" class="form-control" id="name" placeholder="Name">
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="form-group wow fadeInUp" data-wow-delay="200ms">
-                    <input type="email" class="form-control" id="email" placeholder="E-mail">
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="form-group wow fadeInUp" data-wow-delay="300ms">
-                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                </div>
-            </div>
-            <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                <button class="btn oneMusic-btn mt-30" type="submit">Send <i
-                                            class="fa fa-angle-double-right"></i></button>
-            </div>
-        </div>
-    </form> -->
-</div>
-</div>
-</div>
-</div>
-</section> -->
-<!-- ##### Contact Area End ##### -->
 {% endblock main %}

@@ -2444,3 +2444,16 @@
                         border-radius: 10px;
                         z-index: 20;
                     }
+                    
+                    #logoutBtn,
+                    #registerBtn {
+                        margin-left: 10px;
+                        border: 1px solid rgb(31, 41, 46, 0.7);
+                        border-radius: 3px!important;
+                        padding: 7px;
+                    }
+                    
+                    .err_message {
+                        color: red;
+                        font-size: 12px;
+                    }

@@ -1,4 +1,7 @@
 import os
+from datetime import timedelta
+
+
 DEBUG = 1
 # dialect+driver://username:password@host:port/database
 DIALECT = 'mysql'
@@ -17,3 +20,7 @@ SQLALCHEMY_DATABASE_URI = \
     f"{DIALECT}+{DRIVER}://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}\
 ?charset=utf8"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+print(os.urandom(24))
+SECRET_KEY = os.urandom(24)
+PERMANENT_SESSION_LIFETIME = timedelta(days=7)

@@ -1,5 +1,5 @@
 let this_page = 1;
-$('.oneMusic-btn').click(function(page) {
+$('.load-more-movies').click(function(page) {
 
     $.ajax({
         // url: "{{ url_for('load_more_movies')|tojson }}",
@@ -43,6 +43,73 @@ $('.oneMusic-btn').click(function(page) {
             } else {
                 $('.load-more-movies').text("NO MORE")
             }
+        },
+        error: function(e) {
+            alert("error");
+        }
+    })
+
+
+})
+
+
+$('#login-btn').click(function() {
+
+    var form_data = {};
+    var t = $('#loginForm').serializeArray();
+    $.each(t, function() {
+        form_data[this.name] = this.value;
+    });
+
+    $.ajax({
+        url: "http://127.0.0.1/login/",
+        type: "post",
+        // data: {
+        //     email: $('#exampleInputEmail1').val(),
+        //     password: $('#exampleInputPassword1').val(),
+        // },
+        data: form_data,
+        dataType: 'json',
+        success: function(data) {
+            console.log(data)
+            console.log(data.message)
+            if (data.status == "success") {
+                window.location.href = data.message;
+            } else {
+                $('.err_message').html(`<i class= "fa fa-warning (alias) mr-2" ></i >` + data.message)
+            }
+
+
+
+        },
+        error: function(e) {
+            alert("error");
+        }
+    })
+})
+
+$('#register-btn').click(function() {
+
+    var form_data = {};
+    var t = $('#registerForm').serializeArray();
+    $.each(t, function() {
+        form_data[this.name] = this.value;
+    });
+
+    $.ajax({
+        url: "http://127.0.0.1/register/",
+        type: "post",
+        // data: {
+        //     username: $('#register-username').val(),
+        //     email: $('#register-email').val(),
+        //     pssword1: $('#register-password1').val(),
+        //     pssword2: $('#register-password2').val(),
+        // },
+        data: form_data,
+        dataType: 'json',
+        success: function(data) {
+            console.log(daata)
+
         },
         error: function(e) {
             alert("error");

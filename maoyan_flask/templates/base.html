@@ -58,46 +58,23 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="albums-store.html">Albums</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="albums-store.html">Albums</a></li>
-                                            <li><a href="event.html">Events</a></li>
-                                            <li><a href="blog.html">News</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="elements.html">Elements</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="#">Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">Even Dropdown</a></li>
-                                                    <li><a href="#">Even Dropdown</a></li>
-                                                    <li><a href="#">Even Dropdown</a></li>
-                                                    <li><a href="#">Even Dropdown</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Even Dropdown</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="event.html">Events</a></li>
-                                    <li><a href="blog.html">News</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                                    <li><a href="{{ url_for('movies') }}">Movies</a></li>
+                                    <li><a href="{{ url_for('events') }}">Events</a></li>
+                                    <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="login.html" id="loginBtn">Login / Register</a>
+                                        {% if user_name %}
+                                        <a href="{{ url_for('index') }}" id="user_display"><i
+                                    class="fa fa-user-o mr-2"></i>{{ user_name }} </a>
+                                        <a href="{{ url_for('logout') }}" id="logoutBtn">Logout</a> {% else %}
+                                        <a href="{{ url_for('login') }}" id="loginBtn">Sign&nbsp;in</a>
+                                        <a href="{{ url_for('register') }}" id="registerBtn">Sign&nbsp;up</a> {% endif %}
                                     </div>
 
                                     <!-- Cart Button
@@ -164,5 +141,3 @@
     <!-- Extension js -->
     <script src="{{ url_for('static',filename='js/extension.js') }}"></script>
 </body>
-
-</html>

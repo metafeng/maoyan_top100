@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block title%} {{ page_title }} {% endblock title %} {% block main %}
+<!-- ##### Breadcumb Area Start ##### -->
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url({{ url_for('static', filename='img/movie-img/bg-4.jpg') }});">
+    <div class="bradcumbContent">
+        <p></p>
+        <h2>{{ page_title }}</h2>
+    </div>
+</section>
+<!-- ##### Breadcumb Area End ##### -->
+
+<!-- ##### Login Area Start ##### -->
+<section class="login-area section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="login-content">
+                    <h3>Welcome</h3>
+                    <!-- Login Form -->
+                    <div class="login-form registerForm">
+
+                        <form action="{{ url_for('register') }}" method="post">
+
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" class="form-control" id="register-username" placeholder="Enter Username">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" name="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Enter E-mail">
+                                <small id="emailHelp" class="form-text text-muted"><i
+                                            class="fa  mr-2"></i>We'll
+                                        never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" name="password" class="form-control" id="register-password1" placeholder="Password">
+                                <small id="passwordHelp" class="form-text text-muted"><i
+                                            class="fa fa-bell-o mr-2"></i>此网站为学习案例，密码不会被保存，会默认初始化为 p123456</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Confirm Password</label>
+                                <input type="password" name="password" class="form-control" id="register-password2" placeholder="Password">
+                                <!-- <small id="passwordHelp" class="form-text text-muted"><i
+                                            class="fa fa-lock mr-2"></i>此网站为学习案例，密码不会被保存，会默认初始化为 p123456</small> -->
+                            </div>
+                            <button type="submit" class="btn oneMusic-btn mt-30 login-btn" id='register-btn'>{{ page_title }}</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Login Area End ##### -->
+
+{% endblock main %}

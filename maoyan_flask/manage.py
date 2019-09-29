@@ -2,7 +2,7 @@ from flask_script import Manager
 from app import app
 from flask_migrate import Migrate, MigrateCommand
 from middle import db
-from models import Top100
+from models import Top100, User
 
 # init
 # migrate
