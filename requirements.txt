@@ -6,7 +6,7 @@ Django==2.2.4
 efficient-apriori==1.0.0
 idna==2.8
 jieba==0.39
-Jinja2==2.10.1
+Jinja2==2.11.3
 jupyterthemes==0.20.0
 kiwisolver==1.1.0
 lesscpy==0.13.0
