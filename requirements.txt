@@ -30,6 +30,6 @@ six==1.12.0
 snapshot-selenium==0.0.2
 soupsieve==1.9.2
 sqlparse==0.3.0
-urllib3==1.25.3
+urllib3==1.26.5
 wincertstore==0.2
 wordcloud==1.5.0
